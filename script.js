@@ -7,10 +7,13 @@ if (cube) {
   let vy = 3;
   let phase = 0;
   const baseSize = 90;
+  const phaseIncrement = 0.08;
+  const scaleAmplitude = 0.35;
+  const rotationSpeed = 20;
 
   function animate() {
-    phase += 0.08;
-    const scale = 1 + Math.sin(phase) * 0.35;
+    phase += phaseIncrement;
+    const scale = 1 + Math.sin(phase) * scaleAmplitude;
     const currentSize = baseSize * scale;
     const maxX = window.innerWidth - currentSize;
     const maxY = window.innerHeight - currentSize;
@@ -28,7 +31,7 @@ if (cube) {
       y = Math.max(0, Math.min(y, maxY));
     }
 
-    const rotation = phase * 20;
+    const rotation = phase * rotationSpeed;
     cube.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotation}deg)`;
 
     requestAnimationFrame(animate);
