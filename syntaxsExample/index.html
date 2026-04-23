@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="HTML and CSS syntax cheat sheet with common patterns, properties, and examples.">
+	<title>HTML + CSS Cheat Sheet</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Web Syntax Cheat Sheet</h1>
+		<p>Switch between HTML and CSS references from the tabs below.</p>
+		<div class="tabs" role="tablist" aria-label="Cheat sheet tabs">
+			<button class="tab-button is-active" role="tab" aria-selected="true" aria-controls="html-panel" id="html-tab" data-target="html-panel">HTML Cheat Sheet</button>
+			<button class="tab-button" role="tab" aria-selected="false" aria-controls="css-panel" id="css-tab" data-target="css-panel">CSS Cheat Sheet</button>
+		</div>
+	</header>
+
+	<main>
+		<div class="tab-panel" id="html-panel" role="tabpanel" aria-labelledby="html-tab">
+			<section>
+				<h2>1. Basic Document</h2>
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;title&gt;Page Title&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		Content goes here.
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			</section>
+
+			<section>
+				<h2>2. Headings and Text</h2>
+				<pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+
+&lt;p&gt;Paragraph text.&lt;/p&gt;
+&lt;strong&gt;Important text&lt;/strong&gt;
+&lt;em&gt;Emphasized text&lt;/em&gt;
+&lt;mark&gt;Highlighted text&lt;/mark&gt;
+&lt;small&gt;Small print&lt;/small&gt;
+&lt;br&gt;  &lt;!-- line break --&gt;
+&lt;hr&gt;  &lt;!-- thematic break --&gt;</code></pre>
+			</section>
+
+			<section>
+				<h2>3. Links and Navigation</h2>
+				<pre><code>&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;Visit Site&lt;/a&gt;
+&lt;a href="#section-id"&gt;Jump to section&lt;/a&gt;
+&lt;nav&gt;
+	&lt;a href="/"&gt;Home&lt;/a&gt;
+	&lt;a href="/about"&gt;About&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+			</section>
+
+			<section>
+				<h2>4. Images, Audio, Video</h2>
+				<pre><code>&lt;img src="image.jpg" alt="Description" width="300" height="200"&gt;
+
+&lt;audio controls&gt;
+	&lt;source src="audio.mp3" type="audio/mpeg"&gt;
+	Your browser does not support audio.
+&lt;/audio&gt;
+
+&lt;video controls width="400"&gt;
+	&lt;source src="video.mp4" type="video/mp4"&gt;
+	Your browser does not support video.
+&lt;/video&gt;</code></pre>
+			</section>
+
+			<section>
+				<h2>5. Form Structure</h2>
+				<pre><code>&lt;form action="/submit" method="post" autocomplete="on"&gt;
+	&lt;label for="name"&gt;Name&lt;/label&gt;
+	&lt;input id="name" name="name" type="text" required&gt;
+
+	&lt;label for="email"&gt;Email&lt;/label&gt;
+	&lt;input id="email" name="email" type="email" required&gt;
+
+	&lt;label for="role"&gt;Role&lt;/label&gt;
+	&lt;select id="role" name="role"&gt;
+		&lt;option value="dev"&gt;Developer&lt;/option&gt;
+		&lt;option value="designer"&gt;Designer&lt;/option&gt;
+	&lt;/select&gt;
+
+	&lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+			</section>
+
+			<section>
+				<h2>6. Semantic Layout and Metadata</h2>
+				<pre><code>&lt;header&gt;Top content&lt;/header&gt;
+&lt;main&gt;Main content&lt;/main&gt;
+&lt;section&gt;Themed section&lt;/section&gt;
+&lt;article&gt;Standalone block&lt;/article&gt;
+&lt;aside&gt;Side content&lt;/aside&gt;
+&lt;footer&gt;Bottom content&lt;/footer&gt;
+
+&lt;meta name="description" content="Page summary"&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+			</section>
+		</div>
+
+		<div class="tab-panel is-hidden" id="css-panel" role="tabpanel" aria-labelledby="css-tab">
+			<section>
+				<h2>1. Basic Rule Syntax</h2>
+				<pre><code>selector {
+	property: value;
+	property-two: value;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>2. Selectors</h2>
+				<pre><code>* { box-sizing: border-box; }
+body { margin: 0; }
+.card { padding: 1rem; }
+#main-title { color: #0f172a; }
+nav a { text-decoration: none; }
+ul &gt; li { list-style: none; }
+h2 + p { margin-top: 0; }
+.item:hover { background: #eef2ff; }
+input:focus { outline: 2px solid #0b6bcb; }
+p::first-letter { font-size: 1.4rem; }</code></pre>
+			</section>
+
+			<section>
+				<h2>3. Colors and Backgrounds</h2>
+				<pre><code>:root {
+	--brand: #0b6bcb;
+	--text: #1f2937;
+}
+
+.badge {
+	color: rgb(255, 255, 255);
+	background: var(--brand);
+	border: 1px solid hsl(215, 70%, 35%);
+}
+
+body {
+	background: linear-gradient(180deg, #eef3ff, #f6f7fb);
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>4. Typography</h2>
+				<pre><code>body {
+	font-family: "Segoe UI", Tahoma, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	text-align: left;
+	text-transform: none;
+	text-decoration: none;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>5. Box Model</h2>
+				<pre><code>.box {
+	width: 320px;
+	height: 180px;
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid #d8deea;
+	border-radius: 12px;
+	box-sizing: border-box;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>6. Display and Positioning</h2>
+				<pre><code>.inline { display: inline; }
+.block { display: block; }
+.none { display: none; }
+
+.relative-parent { position: relative; }
+.absolute-child {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.sticky-nav {
+	position: sticky;
+	top: 0;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>7. Flexbox</h2>
+				<pre><code>.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.item {
+	flex: 1 1 200px;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>8. Grid</h2>
+				<pre><code>.grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(180px, 1fr));
+	grid-auto-rows: minmax(120px, auto);
+	gap: 1rem;
+}
+
+.feature {
+	grid-column: 1 / 3;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>9. Transitions and Animation</h2>
+				<pre><code>.button {
+	transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+	transform: translateY(-2px);
+}
+
+@keyframes fade-up {
+	from { opacity: 0; transform: translateY(10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+.panel {
+	animation: fade-up 300ms ease;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>10. Responsive Design</h2>
+				<pre><code>.container {
+	width: min(960px, 100% - 2rem);
+	margin-inline: auto;
+}
+
+@media (max-width: 700px) {
+	.tabs {
+		flex-direction: column;
+	}
+
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>11. Common Shorthand</h2>
+				<pre><code>.card {
+	margin: 1rem 0;
+	padding: 1rem 1.25rem;
+	border: 1px solid #d8deea;
+	background: #fff;
+	font: 500 1rem/1.4 "Segoe UI", sans-serif;
+	transition: all 200ms ease;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>12. Useful Units</h2>
+				<pre><code>.units {
+	width: 60%;     /* percentage */
+	max-width: 68rem;
+	padding: 1.5rem;
+	font-size: 1rem;
+	border-width: 2px;
+	transform: translateX(10px);
+	height: 40vh;
+}</code></pre>
+			</section>
+
+			<section>
+				<h2>13. Flip Card Demo</h2>
+				<pre><code>.flip-card {
+	perspective: 1000px;
+	width: 220px;
+	height: 140px;
+}
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 500ms ease;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-card-face {
+	position: absolute;
+	inset: 0;
+	backface-visibility: hidden;
+	border-radius: 12px;
+	display: grid;
+	place-items: center;
+}
+
+.flip-card-back {
+	transform: rotateY(180deg);
+}</code></pre>
+			</section>
+		</div>
+	</main>
+
+	<script src="scritp.js"></script>
+</body>
+</html>

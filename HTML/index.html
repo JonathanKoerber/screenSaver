@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Semantic HTML Scaffold</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Page Header</h1>
+		<p>Introductory content for the page.</p>
+        <pre><code>&lt;header&gt;
+    &lt;h1&gt;Page Header&lt;/h1&gt;
+    &lt;p&gt;Introductory content for the page.&lt;/p&gt;
+&lt;/header&gt;</code></pre>
+	</header>
+
+	<main>
+    <div class="articles-column">
+                <pre><code>&lt;main&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;aside&gt;...&lt;/aside&gt;
+&lt;/main&gt;</code></pre>
+      <article>
+        <h2>Article One</h2>
+        <p>This is the first article section inside the main content area.</p>
+        <p>Articles are standalone sections of content.</p>
+      </article>
+
+      <article>
+        <h2>Article Two</h2>
+        <section>
+          <h3>Sections</h3>
+          <p>Sections are logical divisions of content within an article.</p>
+        </section>
+        <section>
+          <h3>Grouping Content</h3>
+          <p>Sections can group multiple pieces of related information.</p>
+          <p>They can also contain multiple article elements when needed.</p>
+        </section>
+        <pre><code>&lt;article&gt;
+  &lt;h2&gt;Article Title&lt;/h2&gt;
+  &lt;section&gt;
+    &lt;h3&gt;Section Title&lt;/h3&gt;
+    &lt;p&gt;Section content&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/article&gt;</code></pre>
+      </article>
+    </div>
+
+    <aside class="main-aside">
+      <h2>Related Content</h2>
+      <p>This sidebar can hold links, notes, or supporting information.</p>
+      <p>Asides can also hold links to additional resources.</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">MDN Web Docs: &lt;aside&gt;</a></li>
+        <li><a href="https://www.w3.org/TR/html52/grouping.html#the-aside-element">W3C HTML5.2: &lt;aside&gt;</a></li>
+      </ul>
+        <pre><code>&lt;aside&gt;
+    &lt;h2&gt;Related Content&lt;/h2&gt;
+    &lt;p&gt;This sidebar can hold links, notes, or supporting information.&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://example.com"&gt;Related
+        resource&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+    </aside>
+  </main>
+
+  <section class="related-float-demo">
+    <h3>Float + Box Model Demo</h3>
+    <p class="section-note">These three cards are floated left to show a classic float layout. Bright borders and spacing highlight margin, border, and padding.</p>
+    <pre><code>&lt;section class="related-float-demo"&gt;
+    &lt;h3&gt;Float + Box Model Demo&lt;/h3&gt;
+    &lt;aside class="float-card"&gt;...&lt;/aside&gt;
+    &lt;aside class="float-card"&gt;...&lt;/aside&gt;
+    &lt;aside class="float-card"&gt;...&lt;/aside&gt;
+&lt;/section&gt;</code></pre>
+           
+    <aside class="float-card">
+      <h2>Image + Link</h2>
+      <figure>
+        <img src="https://picsum.photos/360/220" alt="Sample layout image for HTML demo">
+        <figcaption>Use descriptive alt text and captions.</figcaption>
+      </figure>
+      <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">Learn about the img element</a></p>
+      <pre><code>&lt;figure&gt;
+  &lt;img src="photo.jpg" alt="Description"&gt;
+  &lt;figcaption&gt;Image caption&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;a href="https://example.com"&gt;Visit link&lt;/a&gt;</code></pre>
+    </aside>
+
+    <aside class="float-card">
+      <h2>Form Elements</h2>
+      <form action="#" method="post">
+        <label for="full-name">Full Name</label>
+        <input id="full-name" name="full-name" type="text" placeholder="Jane Doe">
+
+        <label for="role">Role</label>
+        <select id="role" name="role">
+          <option>Developer</option>
+          <option>Designer</option>
+          <option>Student</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </form>
+      <pre><code>&lt;form action="#" method="post"&gt;
+  &lt;label for="name"&gt;Full Name&lt;/label&gt;
+  &lt;input id="name" name="name" type="text"&gt;
+
+  &lt;select name="role"&gt;
+    &lt;option&gt;Developer&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    </aside>
+
+    <aside class="float-card">
+      <h2>Other Important Elements</h2>
+      <ul>
+        <li><code>&lt;nav&gt;</code> for navigation groups</li>
+        <li><code>&lt;section&gt;</code> for related topics</li>
+        <li><code>&lt;article&gt;</code> for standalone content</li>
+        <li><code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code> for media</li>
+      </ul>
+      <p><strong>Tip:</strong> Start with semantic tags first, then style the layout.</p>
+      <pre><code>&lt;nav&gt;
+  &lt;a href="/"&gt;Home&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;section&gt;
+  &lt;article&gt;Standalone content&lt;/article&gt;
+&lt;/section&gt;</code></pre>
+    </aside>
+  </section>
+
+	<footer>
+		<p>&copy; 2026 Your Name</p>
+	</footer>
+</body>
+</html>
