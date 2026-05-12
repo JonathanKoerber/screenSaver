@@ -1,0 +1,232 @@
+:root{
+  --bg: #f7f9fb;
+  --muted: #666;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#222;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* Header layout: image left, name + title centered at bottom */
+header{
+  position:relative;
+  height:220px;
+  background:#fff;
+  border-bottom:1px solid #e6e6e6;
+  overflow:hidden;
+}
+
+/* Round profile picture positioned left */
+header img{
+    position:absolute;
+  left:20px;
+  top:20px;
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid #fff;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Name centered horizontally, anchored near the bottom */
+header h1{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:44px;
+  margin:0;
+  font-size:1.6rem;
+  font-weight:600;
+  text-align:center;
+}
+
+/* Title centered below the name */
+header p{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:16px;
+  margin:0;
+  color:var(--muted);
+  text-align:center;
+  font-size:1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width:520px){
+  header{
+    height:180px;
+  }
+  header img{
+    left:12px;
+    top:12px;
+    width:110px;
+    height:110px;
+  }
+  header h1{ bottom:40px; font-size:1.2rem; }
+  header p{ bottom:12px; font-size:0.95rem; }
+}
+
+/* Border around main content */
+main{
+  max-width:900px;
+  margin:20px auto;
+  padding:20px;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-radius:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.04);
+  flex:1;
+  width:100%;
+}
+
+/* Accordion (spelled as in HTML: "acordian") */
+.acordian{
+  margin-bottom:16px;
+}
+
+/* Use details/summary as block elements so opening pushes following items down */
+.acordian-item{
+  display:block;
+  padding:12px 16px;
+  border-radius:6px;
+  background:linear-gradient(180deg, #ffffff, #fbfdff);
+  border:1px solid transparent;
+  margin:8px 0;
+  cursor:pointer;
+  transition:box-shadow .2s, border-color .2s;
+}
+
+/* When open, allow natural flow and add elevation */
+.acordian-item[open]{
+  box-shadow:0 8px 22px rgba(0,0,0,0.06);
+  border-color:#e6eaf0;
+}
+
+/* Style the summary row */
+.acordian-item summary{
+  list-style:none;
+  outline:none;
+  -webkit-user-select:none;
+  user-select:none;
+  display:block;
+  font-weight:600;
+  font-size:1.05rem;
+  margin:0;
+  padding:0;
+}
+
+/* Remove native marker and add simple indicator */
+.acordian-item summary::-webkit-details-marker{ display:none; }
+.acordian-item summary::marker{ content: none; }
+.acordian-item summary::after{
+  content: "▸";
+  float:right;
+  transition:transform .18s;
+}
+.acordian-item[open] summary::after{
+  transform:rotate(90deg);
+}
+
+/* Space for details content; natural flow will push next items down */
+.acordian-item > *:not(summary){
+  margin-top:8px;
+}
+
+/* Tidy headings inside items */
+.acordian-item h3{
+  margin:0 0 8px 0;
+  font-size:1.05rem;
+}
+
+/* Make lists collapse smoothly by allowing height change of inner content */
+.acordian-item ul{
+  margin:8px 0 0 16px;
+}
+
+/* Small tweak for the section headings */
+.acordian > h2{
+  margin:0 0 8px 0;
+  font-size:1.15rem;
+  color:#333;
+}
+
+/* Footer with contact information */
+footer{
+  width: 100%;
+
+  margin-top: auto;
+  padding:20px;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-radius:8px;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+footer h3{
+  margin:0 0 12px 0;
+  font-size:1rem;
+  color:#333;
+}
+
+footer a{
+  color:#0366d6;
+  text-decoration:none;
+  margin:0 8px;
+  transition:color .2s;
+}
+
+footer a:hover{
+  color:#0256c7;
+  text-decoration:underline;
+}
+
+footer p{
+  margin:0;
+  line-height:1.6;
+}
+
+/* Footer pinned to bottom - thin and minimal */
+footer{
+  width:100%;
+  margin-top:auto;
+  padding:12px 20px;
+  background:#fff;
+  border-top:1px solid #e6e6e6;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.85rem;
+}
+
+footer h3{
+  margin:0 0 6px 0;
+  font-size:0.95rem;
+  color:#333;
+}
+
+footer a{
+  color:#0366d6;
+  text-decoration:none;
+  margin:0 6px;
+  transition:color .2s;
+}
+
+footer a:hover{
+  color:#0256c7;
+  text-decoration:underline;
+}
+
+footer p{
+  margin:0;
+  line-height:1.4;
+}

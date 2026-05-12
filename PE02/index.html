@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <img src="https://picsum.photos/360/220" alt="Profile Picture">
+            <h1>John Doe</h1>
+            <p>Web Developer</p>
+        </header>
+        <main>
+            <section class="acordian"> 
+                <h2>Experience</h2>
+                <details class="acordian-item">
+                    <summary>Company A</summary>
+                    <p>Web Developer (2020 - Present)</p>
+                    <p>Responsibilities:</p>
+                    <ul>
+                        <li>Developed and maintained company website.</li>
+                        <li>Collaborated with design team to create responsive layouts.</li>
+                        <li>Implemented new features based on user feedback.</li>
+                    </ul>
+                </details>
+                <details class="acordian-item">
+                    <summary>Company B</summary>
+                    <p>Junior Web Developer (2018 - 2020)</p>
+                    <p>Responsibilities:</p>
+                    <ul>
+                        <li>Assisted in the development of e-commerce platform.</li>
+                        <li>Conducted testing and debugging of web applications.</li>
+                        <li>Participated in code reviews and team meetings.</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="acordian" id="skills">
+                <h2>Skills</h2>
+                <table>
+                    <tr><td>HTML</td><td>Expert</td></tr>
+                    <tr><td>CSS</td><td>Expert</td></tr>
+                    <tr><td>JavaScript</td><td>Intermediate</td></tr>
+                    <tr><td>React</td><td>Intermediate</td></tr>
+                    <tr><td>Node.js</td><td>Intermediate</td></tr>
+                </table>
+            </section>
+
+        </main>
+
+        <footer>
+            <h3>Contact</h3>
+            <p>
+                <a href="mailto:john@example.com">📧 john@example.com</a>
+                <a href="tel:+1234567890">📞 (123) 456-7890</a>
+            </p>
+            <p>
+                <a href="https://linkedin.com/in/johndoe">LinkedIn</a>
+                <a href="https://github.com/johndoe">GitHub</a>
+                <a href="https://twitter.com/johndoe">Twitter</a>
+            </p>
+            <p>&copy; 2026 John Doe. All rights reserved.</p>
+        </footer>
+
+        <script>
+        // Make <details> behave like an exclusive accordion (only one open per section)
+        document.querySelectorAll('.acordian').forEach(section => {
+          section.addEventListener('click', e => {
+            if (e.target.tagName.toLowerCase() === 'summary') {
+              const clicked = e.target.parentElement;
+              section.querySelectorAll('details.acordian-item').forEach(d => {
+                if (d !== clicked) d.removeAttribute('open');
+              });
+            }
+          });
+        });
+
+        // Clicking the "Skills" heading closes any open accordion items
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+          const skillsHeader = skillsSection.querySelector('h2');
+          skillsHeader?.addEventListener('click', () => {
+            document.querySelectorAll('details.acordian-item[open]').forEach(d => d.removeAttribute('open'));
+          });
+        }
+        </script>
+    </body>
+</html>
